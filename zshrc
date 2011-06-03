@@ -21,9 +21,14 @@ plugins=(git github brew osx)
 source $ZSH/oh-my-zsh.sh
 
 export CD_ABLE_VARS="true"
-
+      
+# .zshrc_local is the place to put stuff that's machine dependent
 if [[ -r ~/.zshrc_local ]]; then
     . ~/.zshrc_local
 fi
 
 path=($path)
+
+emacs() {
+	open -a /usr/local/Cellar/emacs/HEAD/Emacs.app "$*";
+}
