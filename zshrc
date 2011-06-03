@@ -29,6 +29,9 @@ fi
 
 path=($path)
 
-emacs() {
-	open -a /usr/local/Cellar/emacs/HEAD/Emacs.app "$*";
-}
+# open emacs with wait
+alias emacs='open -n -W -a /Applications/Emacs.app'
+
+# emacs() {
+# 	open -a /usr/local/Cellar/emacs/HEAD/Emacs.app "$*";
+# }
