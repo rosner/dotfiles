@@ -27,11 +27,16 @@ if [[ -r ~/.zshrc_local ]]; then
     . ~/.zshrc_local
 fi
 
-path=($path)
+path=($path ~/.gem/ruby/1.8/bin)
 
 # open emacs with wait
 alias emacs='open -n -W -a /Applications/Emacs.app'
+alias vi='mvim -v"
+alias vim='mvim -v'
 
-# emacs() {
-# 	open -a /usr/local/Cellar/emacs/HEAD/Emacs.app "$*";
-# }
+export JAVA_HOME=`/usr/libexec/java_home`
+export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
+export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
+export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.4.2.2/jars"
+export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/1.3-45758/jars"
+
