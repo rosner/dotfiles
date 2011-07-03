@@ -31,7 +31,7 @@ path=($path ~/.gem/ruby/1.8/bin)
 
 # open emacs with wait
 alias emacs='open -n -W -a /Applications/Emacs.app'
-alias vi='mvim -v"
+alias vi='mvim -v'
 alias vim='mvim -v'
 
 export JAVA_HOME=`/usr/libexec/java_home`
