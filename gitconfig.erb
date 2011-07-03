@@ -3,6 +3,7 @@
 	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
 	co = checkout
+	pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
 [color]
 	diff = auto
 	status = auto
