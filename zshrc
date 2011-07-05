@@ -27,7 +27,8 @@ if [[ -r ~/.zshrc_local ]]; then
     . ~/.zshrc_local
 fi
 
-path=($path ~/.gem/ruby/1.8/bin)
+#include the path to the python install_scripts stuff
+path=(/usr/local/share/python $path)
 
 # open emacs with wait
 alias emacs='open -n -W -a /Applications/Emacs.app'
