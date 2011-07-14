@@ -5,3 +5,7 @@
 vim/*
 *.swp
 *.un~
+.classpath
+.project
+.settings
+target

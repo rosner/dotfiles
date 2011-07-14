@@ -1,6 +1,6 @@
 vim/*
 *.swp
 *.un~
-tmp/backup/*
-tmp/undo/*
-tmp/swap/*
+tmp/backup/
+tmp/undo/
+tmp/swap/

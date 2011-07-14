@@ -41,3 +41,5 @@ export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.4.2.2/jars"
 export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/1.3-45758/jars"
 
+# enables rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

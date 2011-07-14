@@ -4,11 +4,12 @@ set nocompatible
 set modelines=0
 
 " Tabs, spaces, wrapping {{{
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set wrap
+set linebreak "enables wrapping in lines and not inside a word
 "}}}
 
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
@@ -40,6 +41,7 @@ set matchtime=3
 set showbreak=↪ "String for wrapped lines
 set splitbelow
 set splitright
+set hlsearch "highlights search terms 
 
 au FocusLost * :wa
 
