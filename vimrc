@@ -1,3 +1,10 @@
+" changes the zoom behaviour of macvim:
+" defaults write org.vim.MacVim MMZoomBoth 1
+"  
+
+
+
+
 filetype off
 set nocompatible
 
@@ -7,12 +14,15 @@ set modelines=0
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+
 set expandtab
 set wrap
 set linebreak "enables wrapping in lines and not inside a word
 "}}}
 
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
+set title "Adds the buffer to the window when run in terminal
+set shortmess=atI
 
 
 set encoding=utf-8
@@ -29,8 +39,9 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set relativenumber
 set undofile
+set number
+"set colorcolumn=80
 set history=1000
 set undofile "defaults to off, write undo history into a undofile
 set listchars=tab:▸\ ,eol:¬ "One can turn on list with set list
@@ -54,6 +65,8 @@ set directory=~/.tmp/swap//
 set backup
 
 
+" Key Mappings {{{
+let mapleader=","
 "Disable the arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -65,6 +78,13 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
+" maps the ack plugin
+nmap <leader>a <Esc>:Ack!
+
+if has ("gui_macvim")
+  let macvim_skip_cmd_opt_movement = 1
+endif
+"--------------}}}
 
 "Plugins managed with vundle {{{
 set rtp+=~/.vim/bundle/vundle/
@@ -73,13 +93,17 @@ call vundle#rc()
 " Let vundle manage bundles. This is required!
 Bundle 'gmarik/vundle'
 
-Bundle 'pyflakes.vim'
 Bundle 'molokai'
-Bundle 'The-NERD-tree'
-Bundle 'The-NERD-commenter'
-Bundle 'Auto-Pairs'
+Bundle 'L9' 
+Bundle 'FuzzyFinder'
+Bundle 'SuperTab-continued.'
 Bundle 'snipMate'
-Bundle 'Syntastic'
+Bundle 'ack.vim'
+
+" Python related stuff
+Bundle 'pep8'
+Bundle 'pyflakes'
+Bundle 'pydoc.vim'
 
 filetype plugin indent on "This is required!
 "}}}
@@ -104,3 +128,7 @@ if has('gui_running')
     set guicursor+=i-ci:ver20-iCursor
 
 endif
+
+" supertap options as seen here: http://thecatatemysourcecode.posterous.com/vim-python-tab-completion
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview 

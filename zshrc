@@ -31,9 +31,10 @@ fi
 path=(/usr/local/share/python $path)
 
 # open emacs with wait
-alias emacs='open -n -W -a /Applications/Emacs.app'
-alias vi='mvim -v'
-alias vim='mvim -v'
+alias vi='mvim'
+alias vim='mvim'
+
+export EDITOR='mvim -f'
 
 export JAVA_HOME=`/usr/libexec/java_home`
 export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
