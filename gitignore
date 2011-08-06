@@ -9,3 +9,10 @@ vim/*
 .project
 .settings
 target
+vim/*
+*.swp
+*.un~
+tmp/backup/
+tmp/undo/
+tmp/swap/
+*.pyc
