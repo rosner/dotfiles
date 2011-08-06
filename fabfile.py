@@ -34,7 +34,8 @@ def install():
             link_file(file)
 
 def replace_file(file):
-    print "replacing", file
+    os.system("rm -rf %s/.%s" % (os.environ['HOME'], file)]
+    link_file(file)
 
 def link_file(file):
     if False:
