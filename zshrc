@@ -16,7 +16,7 @@ export ZSH_THEME="steeef"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github brew osx)
+plugins=(git github brew osx pip django node npm rvm gem vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -31,10 +31,10 @@ fi
 path=(/usr/local/share/python $path)
 
 # open emacs with wait
-alias vi='mvim'
-alias vim='mvim'
+alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
-export EDITOR='mvim -f'
+export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -f'
 
 export JAVA_HOME=`/usr/libexec/java_home`
 export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
@@ -44,3 +44,5 @@ export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/1.3-45758/jars"
 
 # enables rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+#export PYTHONPATH="/usr/local/lib/python2.7:/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
