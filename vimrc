@@ -1,9 +1,3 @@
-" changes the zoom behaviour of macvim:
-" defaults write org.vim.MacVim MMZoomBoth 1
-"  
-
-
-
 
 filetype off
 set nocompatible
@@ -11,9 +5,9 @@ set nocompatible
 set modelines=0
 
 " Tabs, spaces, wrapping {{{
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 set expandtab
 set wrap
@@ -53,6 +47,8 @@ set showbreak=↪ "String for wrapped lines
 set splitbelow
 set splitright
 set hlsearch "highlights search terms 
+set ignorecase
+set smartcase
 
 au FocusLost * :wa
 
@@ -78,8 +74,13 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
-" maps the ack plugin
-nmap <leader>a <Esc>:Ack!
+
+" remaps moving between buffers when there's a split window
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
 
 if has ("gui_macvim")
   let macvim_skip_cmd_opt_movement = 1
@@ -94,41 +95,56 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'molokai'
+Bundle 'altercation/vim-colors-solarized'
+set t_Co=256
+let g:solarized_termcolors=256
+colorscheme solarized
+
 Bundle 'L9' 
 Bundle 'FuzzyFinder'
-Bundle 'SuperTab-continued.'
+"Bundle 'SuperTab-continued.'
+Bundle 'Align'
+
 Bundle 'snipMate'
-Bundle 'ack.vim'
+Bundle 'rosner/snipmate-snippets'
+" From time to time rebase against upstream honza/snipmate-snippets
+" tell snipmate to use the snippets from github/honza so that we don't get
+" warnings about multiple snippets mapped to the same shortcut
+let g:snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
+
+Bundle 'taglist.vim'
+" Latex gets the latest version from sourceforge and not from vimscripts.org
+Bundle 'AutomaticTexPlugin'
+"let g:atp_statusline=1 "atcivate the text status line
+"let g:atp_Compiler="python"
+"let b:atp_TexCompiler="/usr/texbin/pdflatex"
+"au! CursorHold $HOME*.tex silent call 's:auTeX()'
 
 " Python related stuff
 Bundle 'pep8'
+let g:pep8_map='<leader>8'
 Bundle 'pyflakes'
 Bundle 'pydoc.vim'
+Bundle 'klen/rope-vim'
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview 
+
+Bundle 'JSON.vim'
+au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax 
+
+" JS stuff and related
+Bundle 'kchmck/vim-coffee-script'
+autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+
 
 filetype plugin indent on "This is required!
 "}}}
 
   
-if has('gui_running')
-    colorscheme molokai
-    set guifont=Menlo:h12
 
-    set go-=T
-    "Disable all scrollbars"
-    set go-=l
-    set go-=L
-    set go-=r
-    set go-=R
+" language specific stuff
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-    highlight SpellBad term=underline gui=undercurl guisp=Orange
-
-"    set fillchars+=vert:|
-    set guicursor=n-c:block-Cursor-blinkon0
-    set guicursor+=v:block-vCursor-blinkon0
-    set guicursor+=i-ci:ver20-iCursor
-
-endif
-
-" supertap options as seen here: http://thecatatemysourcecode.posterous.com/vim-python-tab-completion
-let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,longest,preview 
