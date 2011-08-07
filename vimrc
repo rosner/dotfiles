@@ -140,6 +140,7 @@ Bundle 'open-browser.vim'
 
 "Bundle 'motemen/git-vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'int3/vim-extradite'
 
 filetype plugin indent on "This is required!
 "}}}
