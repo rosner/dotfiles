@@ -137,6 +137,11 @@ Bundle 'kchmck/vim-coffee-script'
 autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
 Bundle 'open-browser.vim'
+"Bundle 'preview'
+"
+
+"Bundle 'motemen/git-vim'
+Bundle 'tpope/vim-fugitive'
 
 filetype plugin indent on "This is required!
 "}}}
