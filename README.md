@@ -7,7 +7,8 @@ These are my config file for vim, git etc.
 ### Requirements
 You need `jinja`2 in your python path so make sure it's there. Otherwise install it through `pip` or `easy_install`.
 
-```git clone git://github.com/rosner/dotfiles ~/.dotfiles
+```
+git clone git://github.com/rosner/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 ./fabfile.py
 ```
@@ -16,7 +17,8 @@ If you have fabric installed, you can also do `fab install`
 
 Also initiate `vundle` through:
 
-```git submodule init
+```
+git submodule init
 git submoule update
 ```
 
