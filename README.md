@@ -5,7 +5,7 @@ These are my config file for vim, git etc.
 
 ## Installation
 ### Requirements
-You need `jinja`2 in your python path so make sure it's there. Otherwise install it through `pip` or `easy_install`.
+You need `jinja2` in your python path so make sure it's there. Otherwise install it through `pip` or `easy_install`.
 
 ```
 git clone git://github.com/rosner/dotfiles ~/.dotfiles
