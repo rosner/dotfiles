@@ -45,4 +45,3 @@ export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/1.3-45758/jars"
 # enables rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-#export PYTHONPATH="/usr/local/lib/python2.7:/usr/local/lib/python2.7/site-packages:$PYTHONPATH"

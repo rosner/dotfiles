@@ -1,0 +1,21 @@
+[user]
+	name = Norman Rosner
+	email = norman@rosner.io
+[alias]
+	co = checkout
+	pu = !"git fetch origin -v; git fetch upstream -v; git merge upstream/master"
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	excludesfile = {{ home }}/.gitignore
+	editor = "vim -F"
+	autocrlf = input
+[apply]
+	whitespace = nowarn
+[format]
+	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+[github]
+	user = rosner
+	token =  {{ github_api_token }}

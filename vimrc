@@ -118,7 +118,6 @@ Bundle 'AutomaticTexPlugin'
 "let g:atp_statusline=1 "atcivate the text status line
 "let g:atp_Compiler="python"
 "let b:atp_TexCompiler="/usr/texbin/pdflatex"
-"au! CursorHold $HOME*.tex silent call 's:auTeX()'
 
 " Python related stuff
 Bundle 'pep8'
@@ -137,6 +136,7 @@ au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax
 Bundle 'kchmck/vim-coffee-script'
 autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
+Bundle 'open-browser.vim'
 
 filetype plugin indent on "This is required!
 "}}}
