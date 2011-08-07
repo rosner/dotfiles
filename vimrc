@@ -33,11 +33,9 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set undofile
 set number
 "set colorcolumn=80
 set history=1000
-set undofile "defaults to off, write undo history into a undofile
 set listchars=tab:▸\ ,eol:¬ "One can turn on list with set list
 set shell=/usr/local/bin/zsh
 set wildignore+=*.pyc,.hg,.git,.svn,.DS_Store "Ignores files that match this patterns when completing paths etc.
@@ -55,10 +53,11 @@ au FocusLost * :wa
 syntax on
 set background=dark
 
-set undodir=~/.tmp/undo//
-set backupdir=~/.tmp/backup//
-set directory=~/.tmp/swap//
 set backup
+set undofile "defaults to off, write undo history into a undofile
+set undodir=~/.tmp/undo/
+set backupdir=~/.tmp/backup/
+set directory=~/.tmp/swap/
 
 
 " Key Mappings {{{
