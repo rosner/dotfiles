@@ -101,6 +101,8 @@ colorscheme solarized
 
 Bundle 'L9' 
 Bundle 'FuzzyFinder'
+map <leader>b :FufBuffer<C-M>
+map <leader>f :FufFileWithCurrentBufferDir **/<C-M> 
 "Bundle 'SuperTab-continued.'
 Bundle 'Align'
 
