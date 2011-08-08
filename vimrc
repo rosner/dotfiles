@@ -131,6 +131,9 @@ set completeopt=menuone,longest,preview
 Bundle 'JSON.vim'
 au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax 
 
+Bundle 'Markdown'
+
+
 " JS stuff and related
 Bundle 'kchmck/vim-coffee-script'
 autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
@@ -151,3 +154,7 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
+augroup vagrant
+au!
+au BufRead,BufNewFile Vagrantfile set filetype=ruby
+augroup END
