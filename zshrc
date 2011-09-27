@@ -16,23 +16,24 @@ export ZSH_THEME="steeef"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github brew osx pip django node npm rvm gem vagrant knife)
+plugins=(git github brew osx pip django node npm rvm gem vagrant knife rails3 ruby bundler)
 
 source $ZSH/oh-my-zsh.sh
 
 export CD_ABLE_VARS="true"
       
 # .zshrc_local is the place to put stuff that's machine dependent
-if [[ -r ~/.zshrc_local ]]; then
+if [[ -e ~/.zshrc_local ]]; then
     . ~/.zshrc_local
 fi
 
 #include the path to the python install_scripts stuff
-path=(/usr/local/share/python $path)
+path=(/usr/local/bin /usr/local/share/python $path)
 
 # open emacs with wait
 alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias ctags='ctags -R --exclude=.git --exclude=log *'
 
 export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -f'
 
@@ -42,6 +43,9 @@ export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.4.2.2/jars"
 export EC2_AMITOOL_HOME="/usr/local/Cellar/ec2-ami-tools/1.3-45758/jars"
 
-# enables rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export LS_COLORS="$LSCOLORS"
+# chef stuff
 
+# enables rvm
+source "$HOME/.rvm/scripts/rvm"
+#rvm use 1.9.2 --default

@@ -37,7 +37,7 @@ set number
 "set colorcolumn=80
 set history=1000
 set listchars=tab:▸\ ,eol:¬ "One can turn on list with set list
-set shell=/usr/local/bin/zsh
+set shell=sh
 set wildignore+=*.pyc,.hg,.git,.svn,.DS_Store "Ignores files that match this patterns when completing paths etc.
 set showmatch
 set matchtime=3
@@ -103,11 +103,10 @@ Bundle 'L9'
 Bundle 'FuzzyFinder'
 map <leader>b :FufBuffer<C-M>
 map <leader>f :FufFileWithCurrentBufferDir **/<C-M> 
-"Bundle 'SuperTab-continued.'
 Bundle 'Align'
 
 Bundle 'snipMate'
-Bundle 'rosner/snipmate-snippets'
+Bundle 'honza/snipmate-snippets'
 " From time to time rebase against upstream honza/snipmate-snippets
 " tell snipmate to use the snippets from github/honza so that we don't get
 " warnings about multiple snippets mapped to the same shortcut
@@ -116,9 +115,10 @@ let g:snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
 Bundle 'taglist.vim'
 " Latex gets the latest version from sourceforge and not from vimscripts.org
 Bundle 'AutomaticTexPlugin'
-"let g:atp_statusline=1 "atcivate the text status line
+"let b:atp_Viewer = "
+""let g:atp_statusline=1 "atcivate the text status line
 "let g:atp_Compiler="python"
-"let b:atp_TexCompiler="/usr/texbin/pdflatex"
+let b:atp_TexCompiler="/usr/texbin/pdflatex"
 
 " Python related stuff
 Bundle 'pep8'
@@ -127,6 +127,8 @@ Bundle 'pyflakes'
 Bundle 'pydoc.vim'
 Bundle 'klen/rope-vim'
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+Bundle 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
 set completeopt=menuone,longest,preview 
 
@@ -135,16 +137,24 @@ au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax
 
 Bundle 'Markdown'
 
-
 " JS stuff and related
 Bundle 'kchmck/vim-coffee-script'
 autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
 
 Bundle 'open-browser.vim'
 
-"Bundle 'motemen/git-vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'int3/vim-extradite'
+
+" ruby stuff
+Bundle 'tpope/vim-rails'
+
+Bundle 'scrooloose/nerdtree'
+Bundle 'vim-scripts/tComment'
+
+
+
+
 
 filetype plugin indent on "This is required!
 "}}}
@@ -156,7 +166,9 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-augroup vagrant
+augroup filetypes
 au!
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
+au BufRead,BufNewFile *.md set filetype=Markdown
+au BufRead,BufNewFile *.features set filetype=cucumber
 augroup END

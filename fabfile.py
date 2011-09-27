@@ -7,7 +7,7 @@ from jinja2 import Environment, FileSystemLoader
 
 def install():
     replace_all = False
-    files_to_skip = ['ReadMe.md', 'LICENSE'] 
+    files_to_skip = ['ReadMe.md', 'LICENSE', 'build']
     for file in glob.glob('*'):
         # TODO: Remove the ruby leftovers!
         if file in files_to_skip or '.py' in file: continue

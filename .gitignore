@@ -6,3 +6,4 @@
 /tmp/swap/
 *.pyc
 build/
+mutt/
