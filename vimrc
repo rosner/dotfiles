@@ -80,6 +80,10 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+" This recenters the screen after each search forward so I don't have to
+" move the eye
+nmap n nzz
+nmap N Nzz
 
 if has ("gui_macvim")
   let macvim_skip_cmd_opt_movement = 1
@@ -148,8 +152,9 @@ Bundle 'int3/vim-extradite'
 
 " ruby stuff
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-bundler'
 
-Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/tComment'
 
 
