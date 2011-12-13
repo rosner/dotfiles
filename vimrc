@@ -85,6 +85,10 @@ map <c-h> <c-w>h
 nmap n nzz
 nmap N Nzz
 
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
 if has ("gui_macvim")
   let macvim_skip_cmd_opt_movement = 1
 endif
