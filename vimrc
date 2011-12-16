@@ -101,16 +101,12 @@ call vundle#rc()
 " Let vundle manage bundles. This is required!
 Bundle 'gmarik/vundle'
 
-Bundle 'molokai'
 Bundle 'altercation/vim-colors-solarized'
 set t_Co=256
 let g:solarized_termcolors=256
 colorscheme solarized
 
 Bundle 'L9' 
-Bundle 'FuzzyFinder'
-map <leader>b :FufBuffer<C-M>
-map <leader>f :FufFileWithCurrentBufferDir **/<C-M> 
 Bundle 'Align'
 
 Bundle 'snipMate'
@@ -120,7 +116,6 @@ Bundle 'honza/snipmate-snippets'
 " warnings about multiple snippets mapped to the same shortcut
 let g:snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
 
-Bundle 'taglist.vim'
 " Latex gets the latest version from sourceforge and not from vimscripts.org
 Bundle 'AutomaticTexPlugin'
 "let b:atp_Viewer = "
@@ -129,11 +124,7 @@ Bundle 'AutomaticTexPlugin'
 let b:atp_TexCompiler="/usr/texbin/pdflatex"
 
 " Python related stuff
-Bundle 'pep8'
-let g:pep8_map='<leader>8'
-Bundle 'pyflakes'
-Bundle 'pydoc.vim'
-Bundle 'klen/rope-vim'
+Bundle 'klen/python-mode'
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 Bundle 'ervandew/supertab'
@@ -145,12 +136,6 @@ au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax
 
 Bundle 'Markdown'
 
-" JS stuff and related
-Bundle 'kchmck/vim-coffee-script'
-autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
-
-Bundle 'open-browser.vim'
-
 Bundle 'tpope/vim-fugitive'
 Bundle 'int3/vim-extradite'
 
@@ -161,6 +146,7 @@ Bundle 'tpope/vim-bundler'
 
 Bundle 'vim-scripts/tComment'
 
+Bundle 'wincent/Command-T'
 
 
 
