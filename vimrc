@@ -54,10 +54,10 @@ syntax on
 set background=dark
 
 set backup
+set noswapfile
 set undofile "defaults to off, write undo history into a undofile
 set undodir=~/.tmp/undo/
 set backupdir=~/.tmp/backup/
-set directory=~/.tmp/swap/
 
 
 " Key Mappings {{{
@@ -124,7 +124,7 @@ Bundle 'AutomaticTexPlugin'
 let b:atp_TexCompiler="/usr/texbin/pdflatex"
 
 " Python related stuff
-Bundle 'klen/python-mode'
+" Bundle 'klen/python-mode'
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 Bundle 'ervandew/supertab'
@@ -147,8 +147,7 @@ Bundle 'tpope/vim-bundler'
 Bundle 'vim-scripts/tComment'
 
 Bundle 'wincent/Command-T'
-
-
+Bundle 'FuzzyFinder'
 
 
 filetype plugin indent on "This is required!
