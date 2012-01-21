@@ -142,6 +142,7 @@ Bundle 'vim-scripts/tComment'
 
 Bundle 'wincent/Command-T'
 Bundle 'FuzzyFinder'
+Bundle 'sickill/vim-pasta'
 
 
 filetype plugin indent on "This is required!
