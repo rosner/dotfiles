@@ -109,23 +109,17 @@ colorscheme solarized
 Bundle 'L9' 
 Bundle 'Align'
 
-Bundle 'snipMate'
-Bundle 'honza/snipmate-snippets'
-" From time to time rebase against upstream honza/snipmate-snippets
-" tell snipmate to use the snippets from github/honza so that we don't get
-" warnings about multiple snippets mapped to the same shortcut
-let g:snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
-
-" Latex gets the latest version from sourceforge and not from vimscripts.org
-Bundle 'AutomaticTexPlugin'
-"let b:atp_Viewer = "
-""let g:atp_statusline=1 "atcivate the text status line
-"let g:atp_Compiler="python"
-let b:atp_TexCompiler="/usr/texbin/pdflatex"
+" Bundle 'snipMate'
+" Bundle 'honza/snipmate-snippets'
+" " From time to time rebase against upstream honza/snipmate-snippets
+" " tell snipmate to use the snippets from github/honza so that we don't get
+" " warnings about multiple snippets mapped to the same shortcut
+" let g:snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
 
 " Python related stuff
-" Bundle 'klen/python-mode'
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+Bundle 'klen/python-mode'
+let g:pymode_breakpoint_key='<leader>i'
+let g:pymode_syntax = 1
 
 Bundle 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
@@ -153,7 +147,8 @@ Bundle 'FuzzyFinder'
 filetype plugin indent on "This is required!
 "}}}
 
-  
+" Set working directory to current file
+autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif  
 
 " language specific stuff
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
