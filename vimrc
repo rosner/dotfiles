@@ -34,7 +34,7 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set number
-"set colorcolumn=80
+set colorcolumn=80
 set history=1000
 set listchars=tab:▸\ ,eol:¬ "One can turn on list with set list
 set shell=sh
@@ -106,7 +106,12 @@ set t_Co=256
 let g:solarized_termcolors=256
 colorscheme solarized
 
-Bundle 'L9' 
+
+" surrounding tpope
+" speeddating
+" Control P vs. CommandT vs. mtrmu
+
+Bundle 'L9'
 Bundle 'Align'
 
 " Bundle 'snipMate'
@@ -120,6 +125,7 @@ Bundle 'Align'
 Bundle 'klen/python-mode'
 let g:pymode_breakpoint_key='<leader>i'
 let g:pymode_syntax = 1
+Bundle 'majutsushi/tagbar.git'
 
 Bundle 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
@@ -133,15 +139,12 @@ Bundle 'Markdown'
 Bundle 'tpope/vim-fugitive'
 Bundle 'int3/vim-extradite'
 
-" ruby stuff
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rake'
-Bundle 'tpope/vim-bundler'
-
 Bundle 'vim-scripts/tComment'
 
-Bundle 'wincent/Command-T'
-Bundle 'FuzzyFinder'
+Bundle 'kien/ctrlp.vim.git'
+let g:ctrlp_map = '<c-e>'
+Bundle 'tpope/vim-surround.git'
+Bundle 'tpope/vim-eunuch.git'
 Bundle 'sickill/vim-pasta'
 
 
