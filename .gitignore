@@ -11,3 +11,5 @@ config/ipython/profile_default/log/*
 config/ipython/profile_default/pid/*
 config/ipython/profile_default/security/*
 config/ipython/profile_default/*.sqlite
+buildout/*
+!buildout/default.cfg

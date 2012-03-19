@@ -12,12 +12,14 @@ path=($HOME/.rbenv/shims $HOME/.rbenv/bin /usr/local/bin $path)
 eval "$(rbenv init -)"
 
 # open emacs with wait
-alias vi='${HOME}/Applications/MacVim.app/Contents/MacOS/Vim'
-alias vim='${HOME}/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vi='/usr/local/Cellar/macvim/7.3-63/MacVim.app/Contents/MacOS/Vim'
+alias vim='/usr/local/Cellar/macvim/7.3-63/MacVim.app/Contents/MacOS/Vim'
 
-export EDITOR='${HOME}/Applications/MacVim.app/Contents/MacOS/Vim -f'
+export EDITOR='/usr/local/Cellar/macvim/7.3-63/MacVim.app/Contents/MacOS/Vim -f'
 
 export JAVA_HOME=`/usr/libexec/java_home`
+
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 export LS_COLORS="$LSCOLORS"
 export GNUTERM="x11"

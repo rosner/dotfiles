@@ -53,11 +53,11 @@ au FocusLost * :wa
 syntax on
 set background=dark
 
-set backup
+set nobackup
+set nowritebackup
 set noswapfile
 set undofile "defaults to off, write undo history into a undofile
 set undodir=~/.tmp/undo/
-set backupdir=~/.tmp/backup/
 
 
 " Key Mappings {{{
@@ -122,9 +122,9 @@ Bundle 'Align'
 " let g:snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
 
 " Python related stuff
-Bundle 'klen/python-mode'
-let g:pymode_breakpoint_key='<leader>i'
-let g:pymode_syntax = 1
+" Bundle 'klen/python-mode'
+" let g:pymode_breakpoint_key='<leader>i'
+" let g:pymode_syntax = 1
 Bundle 'majutsushi/tagbar.git'
 
 Bundle 'ervandew/supertab'
@@ -134,8 +134,7 @@ set completeopt=menuone,longest,preview
 Bundle 'JSON.vim'
 au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax 
 
-Bundle 'Markdown'
-
+Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
 Bundle 'int3/vim-extradite'
 
@@ -143,10 +142,15 @@ Bundle 'vim-scripts/tComment'
 
 Bundle 'kien/ctrlp.vim.git'
 let g:ctrlp_map = '<c-e>'
+
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-eunuch.git'
 Bundle 'sickill/vim-pasta'
 
+Bundle 'Glench/Vim-Jinja2-Syntax.git'
+
+Bundle 'groenewege/vim-less.git'
+" Bundle 'skammer/vim-css-color.git'
 
 filetype plugin indent on "This is required!
 "}}}
