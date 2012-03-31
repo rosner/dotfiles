@@ -18,6 +18,7 @@ set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
 set title "Adds the buffer to the window when run in terminal
 set shortmess=atI
 
+set clipboard=unnamed
 
 set encoding=utf-8
 set scrolloff=3
