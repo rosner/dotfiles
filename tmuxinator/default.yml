@@ -1,0 +1,13 @@
+# ~/.tmuxinator/<%= @name %>.yml
+# you can make as many tabs as you wish...
+
+project_name: <%= @name %>
+project_root: ~/Documents/project_folder
+tabs:
+  - editor:
+      layout: main-horizontal
+      panes:
+        - vim
+        - #empty, will just run plain bash
+  - shell: bin/ipython
+  - shell: echo ""
