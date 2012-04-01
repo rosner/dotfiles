@@ -13,3 +13,5 @@ config/ipython/profile_default/security/*
 config/ipython/profile_default/*.sqlite
 buildout/*
 !buildout/default.cfg
+tmuxinator/*
+!tmuxinator/default.yml
