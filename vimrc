@@ -18,6 +18,7 @@ set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
 set title "Adds the buffer to the window when run in terminal
 set shortmess=atI
 
+set clipboard=unnamed
 
 set encoding=utf-8
 set scrolloff=3
@@ -34,7 +35,7 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set number
-"set colorcolumn=80
+set colorcolumn=80
 set history=1000
 set listchars=tab:▸\ ,eol:¬ "One can turn on list with set list
 set shell=sh
@@ -53,11 +54,11 @@ au FocusLost * :wa
 syntax on
 set background=dark
 
-set backup
+set nobackup
+set nowritebackup
+set noswapfile
 set undofile "defaults to off, write undo history into a undofile
 set undodir=~/.tmp/undo/
-set backupdir=~/.tmp/backup/
-set directory=~/.tmp/swap/
 
 
 " Key Mappings {{{
@@ -85,6 +86,10 @@ map <c-h> <c-w>h
 nmap n nzz
 nmap N Nzz
 
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
 if has ("gui_macvim")
   let macvim_skip_cmd_opt_movement = 1
 endif
@@ -97,40 +102,31 @@ call vundle#rc()
 " Let vundle manage bundles. This is required!
 Bundle 'gmarik/vundle'
 
-Bundle 'molokai'
 Bundle 'altercation/vim-colors-solarized'
 set t_Co=256
 let g:solarized_termcolors=256
 colorscheme solarized
 
-Bundle 'L9' 
-Bundle 'FuzzyFinder'
-map <leader>b :FufBuffer<C-M>
-map <leader>f :FufFileWithCurrentBufferDir **/<C-M> 
+
+" surrounding tpope
+" speeddating
+" Control P vs. CommandT vs. mtrmu
+
+Bundle 'L9'
 Bundle 'Align'
 
-Bundle 'snipMate'
-Bundle 'honza/snipmate-snippets'
-" From time to time rebase against upstream honza/snipmate-snippets
-" tell snipmate to use the snippets from github/honza so that we don't get
-" warnings about multiple snippets mapped to the same shortcut
-let g:snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
-
-Bundle 'taglist.vim'
-" Latex gets the latest version from sourceforge and not from vimscripts.org
-Bundle 'AutomaticTexPlugin'
-"let b:atp_Viewer = "
-""let g:atp_statusline=1 "atcivate the text status line
-"let g:atp_Compiler="python"
-let b:atp_TexCompiler="/usr/texbin/pdflatex"
+" Bundle 'snipMate'
+" Bundle 'honza/snipmate-snippets'
+" " From time to time rebase against upstream honza/snipmate-snippets
+" " tell snipmate to use the snippets from github/honza so that we don't get
+" " warnings about multiple snippets mapped to the same shortcut
+" let g:snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
 
 " Python related stuff
-Bundle 'pep8'
-let g:pep8_map='<leader>8'
-Bundle 'pyflakes'
-Bundle 'pydoc.vim'
-Bundle 'klen/rope-vim'
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+" Bundle 'klen/python-mode'
+" let g:pymode_breakpoint_key='<leader>i'
+" let g:pymode_syntax = 1
+Bundle 'majutsushi/tagbar.git'
 
 Bundle 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
@@ -139,32 +135,29 @@ set completeopt=menuone,longest,preview
 Bundle 'JSON.vim'
 au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax 
 
-Bundle 'Markdown'
-
-" JS stuff and related
-Bundle 'kchmck/vim-coffee-script'
-autocmd BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
-
-Bundle 'open-browser.vim'
-
+Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
 Bundle 'int3/vim-extradite'
 
-" ruby stuff
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-rake'
-Bundle 'tpope/vim-bundler'
-
 Bundle 'vim-scripts/tComment'
 
+Bundle 'kien/ctrlp.vim.git'
+let g:ctrlp_map = '<c-e>'
 
+Bundle 'tpope/vim-surround.git'
+Bundle 'tpope/vim-eunuch.git'
+Bundle 'sickill/vim-pasta'
 
+Bundle 'Glench/Vim-Jinja2-Syntax.git'
 
+Bundle 'groenewege/vim-less.git'
+" Bundle 'skammer/vim-css-color.git'
 
 filetype plugin indent on "This is required!
 "}}}
 
-  
+" Set working directory to current file
+autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif  
 
 " language specific stuff
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS

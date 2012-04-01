@@ -17,3 +17,4 @@ tmp/undo/
 tmp/swap/
 *.pyc
 build
+solr/
