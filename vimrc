@@ -18,7 +18,7 @@ set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
 set title "Adds the buffer to the window when run in terminal
 set shortmess=atI
 
-set clipboard=unnamed
+"set clipboard=unnamed
 
 set encoding=utf-8
 set scrolloff=3
@@ -121,7 +121,7 @@ au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
 Bundle 'int3/vim-extradite'
-
+ 
 Bundle 'vim-scripts/tComment'
 
 Bundle 'kien/ctrlp.vim.git'
@@ -129,9 +129,9 @@ let g:ctrlp_map = '<c-e>'
 
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-eunuch.git'
-
+ 
 Bundle 'Glench/Vim-Jinja2-Syntax.git'
-
+ 
 Bundle 'groenewege/vim-less.git'
 
 filetype plugin indent on "This is required!
