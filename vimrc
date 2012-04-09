@@ -133,6 +133,7 @@ Bundle 'tpope/vim-eunuch.git'
 Bundle 'Glench/Vim-Jinja2-Syntax.git'
  
 Bundle 'groenewege/vim-less.git'
+au! BufRead,BufNewFile *.less set filetype=less 
 
 filetype plugin indent on "This is required!
 "}}}
