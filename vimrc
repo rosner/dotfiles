@@ -90,11 +90,6 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-if has ("gui_macvim")
-  let macvim_skip_cmd_opt_movement = 1
-endif
-"--------------}}}
-
 "Plugins managed with vundle {{{
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -107,20 +102,8 @@ set t_Co=256
 let g:solarized_termcolors=256
 colorscheme solarized
 
-
-" surrounding tpope
-" speeddating
-" Control P vs. CommandT vs. mtrmu
-
 Bundle 'L9'
 Bundle 'Align'
-
-" Bundle 'snipMate'
-" Bundle 'honza/snipmate-snippets'
-" " From time to time rebase against upstream honza/snipmate-snippets
-" " tell snipmate to use the snippets from github/honza so that we don't get
-" " warnings about multiple snippets mapped to the same shortcut
-" let g:snippets_dir="~/.vim/bundle/snipmate-snippets/snippets"
 
 " Python related stuff
 " Bundle 'klen/python-mode'
@@ -146,12 +129,10 @@ let g:ctrlp_map = '<c-e>'
 
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-eunuch.git'
-Bundle 'sickill/vim-pasta'
 
 Bundle 'Glench/Vim-Jinja2-Syntax.git'
 
 Bundle 'groenewege/vim-less.git'
-" Bundle 'skammer/vim-css-color.git'
 
 filetype plugin indent on "This is required!
 "}}}
