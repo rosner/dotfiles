@@ -117,6 +117,9 @@ set completeopt=menuone,longest,preview
 
 Bundle 'JSON.vim'
 au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax 
+Bundle 'groenewege/vim-less.git'
+au! BufRead,BufNewFile *.less set filetype=less 
+Bundle 'Glench/Vim-Jinja2-Syntax.git'
 
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
@@ -130,10 +133,13 @@ let g:ctrlp_map = '<c-e>'
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-eunuch.git'
  
-Bundle 'Glench/Vim-Jinja2-Syntax.git'
+Bundle 'sjl/clam.vim.git'
+nnoremap ! :Clam<space>
+Bundle 'sjl/splice.vim.git'
+
+Bundle 'Lokaltog/vim-powerline.git'
+let g:Powerline_symbols = 'fancy'
  
-Bundle 'groenewege/vim-less.git'
-au! BufRead,BufNewFile *.less set filetype=less 
 
 filetype plugin indent on "This is required!
 "}}}
