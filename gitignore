@@ -18,3 +18,6 @@ tmp/swap/
 *.pyc
 build
 solr/
+.ropeproject/
+.ropeproject
+.env
