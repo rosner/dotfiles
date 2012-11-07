@@ -9,16 +9,8 @@
 	branch = auto
 [core]
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
-	autocrlf = true
+	autocrlf = input
 [apply]
 	whitespace = nowarn
 [format]
 	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
-[merge]
-    tool = splice
-[mergetool "splice"]
-    cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
-    trustExitCode = true
-[github]
-	user = rosner
-	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>
