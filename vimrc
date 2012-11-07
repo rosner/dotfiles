@@ -106,9 +106,10 @@ Bundle 'L9'
 Bundle 'Align'
 
 " Python related stuff
-" Bundle 'klen/python-mode'
-" let g:pymode_breakpoint_key='<leader>i'
-" let g:pymode_syntax = 1
+Bundle 'klen/python-mode'
+let g:pymode_breakpoint_key='<leader>i'
+let g:pymode_syntax = 1
+let g:pymode_folding = 0
 Bundle 'majutsushi/tagbar.git'
 
 Bundle 'ervandew/supertab'
@@ -132,14 +133,28 @@ let g:ctrlp_map = '<c-e>'
 
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-eunuch.git'
+Bundle 'tpope/vim-unimpaired.git'
  
 Bundle 'sjl/clam.vim.git'
 nnoremap ! :Clam<space>
-Bundle 'sjl/splice.vim.git'
+" Bundle 'sjl/splice.vim.git'
 
 Bundle 'Lokaltog/vim-powerline.git'
 let g:Powerline_symbols = 'fancy'
  
+Bundle 'edsono/vim-matchit.git'
+
+"snipmate stuff
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'honza/snipmate-snippets'
+Bundle 'garbas/vim-snipmate'
+
+Bundle 'Syntastic'
+Bundle 'vim-coffee-script'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'Better-Javascript-Indentation'
+Bundle 'vim-stylus'
 
 filetype plugin indent on "This is required!
 "}}}
@@ -151,10 +166,19 @@ autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType coffee setl shiftwidth=2 tabstop=2
+autocmd FileType javascript setl shiftwidth=2 tabstop=2
+autocmd FileType jade setl shiftwidth=2 tabstop=2
+autocmd FileType stylus setl shiftwidth=2 tabstop=2
+autocmd FileType less setl shiftwidth=2 tabstop=2
 
 augroup filetypes
 au!
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
-au BufRead,BufNewFile *.md set filetype=Markdown
+au BufRead,BufNewFile *.md set filetype=Markdown 
+" set the make program to display in Marked.app
+au BufRead,BufEnter,BufNewFile *.md setlocal makeprg=open\ -a\ Marked.app\ %
 au BufRead,BufNewFile *.features set filetype=cucumber
+au BufRead,BufNewFile *.jade set filetype=jade
+au BufRead,BufNewFile *.dhtml set filetype=htmldjango.html
 augroup END
