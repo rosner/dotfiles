@@ -110,6 +110,10 @@ Bundle 'klen/python-mode'
 let g:pymode_breakpoint_key='<leader>i'
 let g:pymode_syntax = 1
 let g:pymode_folding = 0
+let g:pymode_run = 0
+let g:pymode_lint_ignore = ""
+let g:pymode_lint_maxheight = 3
+
 Bundle 'majutsushi/tagbar.git'
 
 Bundle 'ervandew/supertab'
@@ -130,6 +134,7 @@ Bundle 'vim-scripts/tComment'
 
 Bundle 'kien/ctrlp.vim.git'
 let g:ctrlp_map = '<c-e>'
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-eunuch.git'
@@ -156,6 +161,14 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'Better-Javascript-Indentation'
 Bundle 'vim-stylus'
 
+Bundle 'matthias-guenther/hammer.vim'
+Bundle 'MarcWeber/vim-addon-local-vimrc'
+
+" ATP latex stuff
+Bundle 'AutomaticLaTexPlugin'
+let b:atp_TexCompiler = "pdflatex"
+let b:atp_TexFlavor = "latex"
+
 filetype plugin indent on "This is required!
 "}}}
 
@@ -175,10 +188,12 @@ autocmd FileType less setl shiftwidth=2 tabstop=2
 augroup filetypes
 au!
 au BufRead,BufNewFile Vagrantfile set filetype=ruby
+au BufRead,BufNewFile Podfile set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=Markdown 
 " set the make program to display in Marked.app
 au BufRead,BufEnter,BufNewFile *.md setlocal makeprg=open\ -a\ Marked.app\ %
 au BufRead,BufNewFile *.features set filetype=cucumber
 au BufRead,BufNewFile *.jade set filetype=jade
-au BufRead,BufNewFile *.dhtml set filetype=htmldjango.html
+au BufRead,BufNewFile *.styl set filetype=stylus
+au BufRead,BufNewFile .bowerrc set filetype=json
 augroup END

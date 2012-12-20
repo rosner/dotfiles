@@ -16,13 +16,15 @@ export PROJECT_HOME=$HOME/data/Documents/code/1kdims
 # maven and java
 export JAVA_HOME=`/usr/libexec/java_home`
 
-plugins=(git heroku brew osx pip django node npm gem vagrant ruby virtualenvwrapper)
+plugins=(git heroku brew osx pip django node npm gem vagrant ruby virtualenvwrapper git-flow)
 
-path=(/usr/local/bin /Applications/Postgres.app/Contents/MacOS/bin /usr/local/heroku/bin $path)
+path=(/usr/local/share/python /usr/local/share/npm/bin /usr/local/bin /Applications/Postgres.app/Contents/MacOS/bin /usr/local/heroku/bin $path)
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+source $ZSH/oh-my-zsh.sh
 alias scp -F ~/.ssh/config
+alias l="ls -alfgh"
 
 export EDITOR='/usr/local/Cellar/macvim/7.3-64/MacVim.app/Contents/MacOS/Vim -f'
 
@@ -31,5 +33,4 @@ export EDITOR='/usr/local/Cellar/macvim/7.3-64/MacVim.app/Contents/MacOS/Vim -f'
 
 source /usr/local/bin/virtualenvwrapper.sh
 
-source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
