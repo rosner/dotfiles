@@ -11,7 +11,7 @@ export LS_COLORS="$LSCOLORS"
 
 # virtualenv stuff
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/data/Documents/code/1kdims
+export PROJECT_HOME=$HOME/Code/
       
 # maven and java
 export JAVA_HOME=`/usr/libexec/java_home`
@@ -26,11 +26,12 @@ source $ZSH/oh-my-zsh.sh
 alias scp -F ~/.ssh/config
 alias l="ls -alfgh"
 
-export EDITOR='/usr/local/Cellar/macvim/7.3-64/MacVim.app/Contents/MacOS/Vim -f'
+export EDITOR='/usr/local/bin/vim'
+export RBENV_ROOT=/usr/local/opt/rbenv
 
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-source /usr/local/bin/virtualenvwrapper.sh
+source /usr/local/share/python/virtualenvwrapper.sh
 
 unsetopt correct_all
